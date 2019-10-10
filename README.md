@@ -50,4 +50,4 @@ BaseActivity或者BaseFragment通过requestBy...等一句话就可以在response
         
 这样您就可以使用Activity或者Fragment通过继承BaseActivity或者BaseFragment使用library里的东西啦！        
 
-
+本框架将持续更新，如有问题可联系：Kaideer@163.com
