@@ -71,7 +71,10 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
         //初始化控件
         initView();
 
-        EventBus.getDefault().register(this);
+        //判断是否注册EventBus
+        if (isRegisterEventBus()){
+            EventBus.getDefault().register(this);
+        }
 
 //        //初始化加载框
 //        //初始化AlertDialog
@@ -92,6 +95,10 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
 
         initListener();
 
+    }
+
+    public boolean isRegisterEventBus() {
+        return false;
     }
 
     public static List<Activity> baseActivitys(int index) {

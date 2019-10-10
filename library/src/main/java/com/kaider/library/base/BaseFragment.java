@@ -62,7 +62,10 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
 
         addFragment(this);
 
-        EventBus.getDefault().register(this);
+        //判断是否注册EventBus
+        if (isRegisterEventBus()) {
+            EventBus.getDefault().register(this);
+        }
 //
 //        //初始化加载框
 //        //初始化AlertDialog
@@ -80,6 +83,15 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
         presenter.attach(this);
 
         return view;
+    }
+
+    /**
+     * 用于决定是否开启EventBus
+     *
+     * @return
+     */
+    public boolean isRegisterEventBus() {
+        return false;
     }
 
     /**
