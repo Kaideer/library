@@ -14,14 +14,16 @@ BaseActivity或者BaseFragment通过requestBy...等一句话就可以在response
 在首启动的Activity内在onCreate方法里面通过调用 MyApi.BaseUrl = ""  来配置你的BaseUrl
 
 需要您在AndroidManifest中设置网络权限和网络状态权限：
+
 	<uses-permission android:name="android.permission.INTERNET"/>
     	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 	
 还需要您在AndroidManifest中的Application中设置一下  networkSecurityConfig 属性
 具体配置请访问：
-	https://www.cnblogs.com/renhui/p/9921790.html
-	https://blog.csdn.net/hewenlee/article/details/84097493
-	https://www.jianshu.com/p/b88cc9994174?tdsourcetag=s_pcqq_aiomsg
+
+	https://www.cnblogs.com/renhui/p/9921790.html  
+	https://blog.csdn.net/hewenlee/article/details/84097493  
+	https://www.jianshu.com/p/b88cc9994174?tdsourcetag=s_pcqq_aiomsg  
 
 
 接下来配置两个步骤使用library
