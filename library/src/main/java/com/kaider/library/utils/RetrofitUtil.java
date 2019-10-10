@@ -415,7 +415,7 @@ public class RetrofitUtil<O> {
      * @param callResultData：返回请求的结果
      * @return 返回请求响应体
      */
-    private Observer getObserve(O bean, CallResultData callResultData) {
+    private Observer<ResponseBody> getObserve(O bean, CallResultData callResultData) {
         Observer<ResponseBody> observer = new Observer<ResponseBody>() {
             /**
              * 当所有请求执行成功执行，与onError相反

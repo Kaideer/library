@@ -1,9 +1,13 @@
 package com.kaider.library.base;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
@@ -51,6 +55,16 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
 
         setContentView(initLayout());
 
+        /**PackageManager packageManager = this.getApplication().getPackageManager();
+         Intent intent = packageManager.getLaunchIntentForPackage(this.getPackageName());
+         ComponentName launchComponentName = intent.getComponent();
+         ComponentName componentName = this.getComponentName();
+         if(componentName.toString().equals(launchComponentName.toString())){
+         Log.i("min77",componentName.getClassName()+"是第一个启动的activity");
+         }else {
+         Log.i("min77",componentName.getClassName()+"不是第一个启动的activity");
+         }*/
+
         activity = this;
         context = this;
 
@@ -72,7 +86,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
         initView();
 
         //判断是否注册EventBus
-        if (isRegisterEventBus()){
+        if (isRegisterEventBus()) {
             EventBus.getDefault().register(this);
         }
 
