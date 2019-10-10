@@ -7,7 +7,7 @@ BaseActivity或者BaseFragment通过requestBy...等一句话就可以在response
 
 其中包括各种工具类：Sp、TimeUtil（时间转换工具类）、网络判断工具类、动态权限申请工具类等...
 
-其中封装EventBus，如果需要使用则只需要在Activity或者Fragment中实现isRegisterEventBus方法返回true即可
+其中封装EventBus，如果需要使用EventBus，则只需要在Activity或者Fragment中实现isRegisterEventBus方法返回true即可
 
 如果需要发生网络请求的话 需要在首启动的Activity中配置一次您的BaseURL
 
@@ -27,7 +27,7 @@ BaseActivity或者BaseFragment通过requestBy...等一句话就可以在response
 	      }
         
 2：
-  将 implementation 'com.github.Kaideer:library:1.0.4' 导入到您app的Module中
+  将 implementation 'com.github.Kaideer:library:1.0.4' 导入到您app的Module中的build.gradle即可
   如下所示：
   
       dependencies {
