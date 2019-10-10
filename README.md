@@ -23,7 +23,7 @@
   如下所示：
   
       dependencies {
-	              implementation 'com.github.Kaideer:library:Tag'
+	              implementation 'com.github.Kaideer:library:1.0.4'
 	      }
         
         
