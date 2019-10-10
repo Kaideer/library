@@ -24,9 +24,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
-
 /**
  * @Author： KaiDer
  * @Date： 2019/7/7 19:34
@@ -45,7 +42,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
     public static List<Activity> activities;
     private static Activity activity;
     public static Context context;
-    private Unbinder unbinder;
     //    private AlertDialog dialog;
 
 
@@ -54,8 +50,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
         super.onCreate(savedInstanceState);
 
         setContentView(initLayout());
-
-        unbinder = ButterKnife.bind(this);
 
         activity = this;
         context = this;
@@ -656,7 +650,6 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
         //释放内存
         presenter.detach();
         EventBus.getDefault().unregister(this);
-        unbinder.unbind();
         destroy();
     }
 

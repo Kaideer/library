@@ -25,8 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * @Author： KaiDer
@@ -44,15 +42,12 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
      * 定义一个存放所有Fragment的集合
      */
     public static List<Fragment> fragments;
-    private Unbinder unbinder;
     //    private AlertDialog dialog;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(initLayout(), null);
-
-        unbinder = ButterKnife.bind(this, view);
 
         //透明状态栏
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -583,7 +578,6 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
         super.onDestroyView();
         presenter.detach();
         EventBus.getDefault().unregister(this);
-        unbinder.unbind();
         destroy();
         removeFragment(this);
     }

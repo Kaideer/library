@@ -1,6 +1,4 @@
 apply plugin: 'com.android.library'
-//添加以下apply
-apply plugin: 'com.jakewharton.butterknife'
 
 android {
     compileSdkVersion 29
@@ -76,9 +74,5 @@ dependencies {
 
     //导入eventBus的依赖
     api 'org.greenrobot:eventbus:3.1.1'
-
-    //butterknife依赖
-    api 'com.jakewharton:butterknife:9.0.0-rc2'
-    api  'com.jakewharton:butterknife-compiler:9.0.0-rc2'
 
 }
