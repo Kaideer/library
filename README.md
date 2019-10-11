@@ -40,11 +40,11 @@ BaseActivity或者BaseFragment通过requestBy...等一句话就可以在response
 	      }
         
 2：
-  将 implementation 'com.github.Kaideer:library:1.0.4' 导入到您app的Module中的build.gradle即可
+  将 implementation 'com.github.Kaideer:library:1.0.5' 导入到您app的Module中的build.gradle即可
   如下所示：
   
       dependencies {
-	              implementation 'com.github.Kaideer:library:1.0.4'
+	              implementation 'com.github.Kaideer:library:1.0.5'
 	      }
         
         
