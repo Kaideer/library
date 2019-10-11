@@ -43,6 +43,7 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
      */
     public static List<Fragment> fragments;
     //    private AlertDialog dialog;
+    public static Context context;
 
     @Nullable
     @Override
@@ -59,6 +60,8 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
         StatusBarUtil.setStatusBarDarkTheme(getActivity(), true);
 
         initView(view);
+
+        context = getActivity();
 
         addFragment(this);
 
