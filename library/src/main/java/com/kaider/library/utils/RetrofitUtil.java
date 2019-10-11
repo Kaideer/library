@@ -332,10 +332,10 @@ public class RetrofitUtil<O> {
     public void requestByPutFieldAndHeader(String url, Map<String, String> fieldMap, Map<String, String> headerMap, O bean, CallResultData callResultData) {
         //判空处理
         if (fieldMap == null) {
-            fieldMap = new HashMap<>();
+            fieldMap = new HashMap<>(16);
         }
         if (headerMap == null) {
-            headerMap = new HashMap<>();
+            headerMap = new HashMap<>(3);
         }
         apiServer.requestByPutFieldAndHeader(url,fieldMap,headerMap)
                 //指定请求线程

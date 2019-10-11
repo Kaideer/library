@@ -51,7 +51,9 @@ public class Model implements Contract.IModel {
     public void getRequestByGetHeader(Context context, String url, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByGetHeader(url, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -77,7 +79,9 @@ public class Model implements Contract.IModel {
     public void getRequestByPostHeader(Context context, String url, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByPostHeader(url, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -104,7 +108,9 @@ public class Model implements Contract.IModel {
     public void getRequestByPostFileAndHeader(Context context, String url, File file, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByPostUpHeadImg(url, file, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -131,7 +137,9 @@ public class Model implements Contract.IModel {
     public void getRequestByPostBodyAndHeader(Context context, String url, String json, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByPostBodyAndHeader(url, headerMap, json, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -221,10 +229,12 @@ public class Model implements Contract.IModel {
      * @param callRequestData:返回结果接口
      */
     @Override
-    public void getRequestByPutFieldAndHeader(Context context,String url, Map fieldMap, Object bean, CallRequestData callRequestData) {
+    public void getRequestByPutFieldAndHeader(Context context, String url, Map fieldMap, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByPutFieldAndHeader(url, fieldMap, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -275,7 +285,9 @@ public class Model implements Contract.IModel {
     public void getRequestByPostFileParamAndHeader(Context context, String url, File file, Map paramMap, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByPostUpFileParamAndHeader(url, file, paramMap, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -302,7 +314,9 @@ public class Model implements Contract.IModel {
     public void getRequestByDeleteParamAndHeader(Context context, String url, Map paramMap, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByDeleteParamAndHeader(url, paramMap, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -332,7 +346,9 @@ public class Model implements Contract.IModel {
             List<File> fileList = (List<File>) list;
             Map<String, String> headerMap = new HashMap<>(3);
             String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-            headerMap.put(MyApi.UserIdTarget, userId);
+            if (userId != null && !userId.isEmpty()) {
+                headerMap.put(MyApi.UserIdTarget, userId);
+            }
             RetrofitUtil.getInstance().requestByPostFileAndParamAndHeader(url, fileList, paramMap, headerMap, bean, new RetrofitUtil.CallResultData() {
                 @Override
                 public void onResponseSuccess(Object bean) {
@@ -362,7 +378,9 @@ public class Model implements Contract.IModel {
     public void getRequestByPutParamAndHeader(Context context, String url, Map queryMap, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByPutParamAndHeader(url, queryMap, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -389,7 +407,9 @@ public class Model implements Contract.IModel {
     public void getRequestByPostFieldAndHeader(Context context, String url, Map fieldMap, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByPostFieldAndHeader(url, fieldMap, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -416,7 +436,9 @@ public class Model implements Contract.IModel {
     public void getRequestByPostParamAndHeader(Context context, String url, Map queryMap, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByPostParamAndHeader(url, queryMap, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
@@ -466,7 +488,9 @@ public class Model implements Contract.IModel {
     public void getRequestByGetParamAndHeader(Context context, String url, Map queryMap, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
-        headerMap.put(MyApi.UserIdTarget, userId);
+        if (userId != null && !userId.isEmpty()) {
+            headerMap.put(MyApi.UserIdTarget, userId);
+        }
         RetrofitUtil.getInstance().requestByGetParamAndHeader(url, queryMap, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
