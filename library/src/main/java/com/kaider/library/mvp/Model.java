@@ -105,13 +105,13 @@ public class Model implements Contract.IModel {
      * @param callRequestData:请求返回的数据
      */
     @Override
-    public void getRequestByPostFileAndHeader(Context context, String url, File file, Object bean, CallRequestData callRequestData) {
+    public void getRequestByPostFileAndHeader(Context context, String url, String key, File file, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
         if (userId != null && !userId.isEmpty()) {
             headerMap.put(MyApi.UserIdTarget, userId);
         }
-        RetrofitUtil.getInstance().requestByPostUpHeadImg(url, file, headerMap, bean, new RetrofitUtil.CallResultData() {
+        RetrofitUtil.getInstance().requestByPostUpHeadImg(url, key, file, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
                 callRequestData.onRequestSuccess(bean);
@@ -282,13 +282,13 @@ public class Model implements Contract.IModel {
      * @param callRequestData:请求返回数据的接口
      */
     @Override
-    public void getRequestByPostFileParamAndHeader(Context context, String url, File file, Map paramMap, Object bean, CallRequestData callRequestData) {
+    public void getRequestByPostFileParamAndHeader(Context context, String url, String key, File file, Map paramMap, Object bean, CallRequestData callRequestData) {
         Map<String, String> headerMap = new HashMap<>(3);
         String userId = SpStorage.getStringValue(context, "userInfo", MyApi.UserId);
         if (userId != null && !userId.isEmpty()) {
             headerMap.put(MyApi.UserIdTarget, userId);
         }
-        RetrofitUtil.getInstance().requestByPostUpFileParamAndHeader(url, file, paramMap, headerMap, bean, new RetrofitUtil.CallResultData() {
+        RetrofitUtil.getInstance().requestByPostUpFileParamAndHeader(url, key, file, paramMap, headerMap, bean, new RetrofitUtil.CallResultData() {
             @Override
             public void onResponseSuccess(Object bean) {
                 callRequestData.onRequestSuccess(bean);
@@ -341,7 +341,7 @@ public class Model implements Contract.IModel {
      * @param callRequestData:请求返回数据的接口
      */
     @Override
-    public void getRequestByPostFilesAndParamAndHeader(Context context, String url, List list, Map paramMap, Object bean, CallRequestData callRequestData) {
+    public void getRequestByPostFilesAndParamAndHeader(Context context, String url, String key, List list, Map paramMap, Object bean, CallRequestData callRequestData) {
         try {
             List<File> fileList = (List<File>) list;
             Map<String, String> headerMap = new HashMap<>(3);
@@ -349,7 +349,7 @@ public class Model implements Contract.IModel {
             if (userId != null && !userId.isEmpty()) {
                 headerMap.put(MyApi.UserIdTarget, userId);
             }
-            RetrofitUtil.getInstance().requestByPostFileAndParamAndHeader(url, fileList, paramMap, headerMap, bean, new RetrofitUtil.CallResultData() {
+            RetrofitUtil.getInstance().requestByPostFileAndParamAndHeader(url, key, fileList, paramMap, headerMap, bean, new RetrofitUtil.CallResultData() {
                 @Override
                 public void onResponseSuccess(Object bean) {
                     callRequestData.onRequestSuccess(bean);

@@ -190,8 +190,8 @@ public class Presenter implements Contract.IPresenter<Contract.IView, Object> {
     }
 
     @Override
-    public void mutualByPostFileAndHeader(Context context, String url, File file, Object bean) {
-        model.getRequestByPostFileAndHeader(context, url, file, bean, new Contract.IModel.CallRequestData() {
+    public void mutualByPostFileAndHeader(Context context, String key, String url, File file, Object bean) {
+        model.getRequestByPostFileAndHeader(context, url, key, file, bean, new Contract.IModel.CallRequestData() {
             @Override
             public void onRequestSuccess(Object bean) {
                 if (bean == null) {
@@ -244,8 +244,8 @@ public class Presenter implements Contract.IPresenter<Contract.IView, Object> {
     }
 
     @Override
-    public void mutualByPostFileAndParamAndHeader(Context context, String url, List<File> files, Map<String, String> paramMap, Object bean) {
-        model.getRequestByPostFilesAndParamAndHeader(context, url, files, paramMap, bean, new Contract.IModel.CallRequestData() {
+    public void mutualByPostFileAndParamAndHeader(Context context, String url, String key, List<File> files, Map<String, String> paramMap, Object bean) {
+        model.getRequestByPostFilesAndParamAndHeader(context, url, key, files, paramMap, bean, new Contract.IModel.CallRequestData() {
             @Override
             public void onRequestSuccess(Object bean) {
                 if (bean == null) {
@@ -280,8 +280,8 @@ public class Presenter implements Contract.IPresenter<Contract.IView, Object> {
     }
 
     @Override
-    public void mutualByPostFileParamAndHeader(Context context, String url, File file, Map<String, String> paramMap, Object bean) {
-        model.getRequestByPostFileParamAndHeader(context, url, file, paramMap, bean, new Contract.IModel.CallRequestData() {
+    public void mutualByPostFileParamAndHeader(Context context, String url, String key, File file, Map<String, String> paramMap, Object bean) {
+        model.getRequestByPostFileParamAndHeader(context, url, key, file, paramMap, bean, new Contract.IModel.CallRequestData() {
             @Override
             public void onRequestSuccess(Object bean) {
                 if (bean == null) {

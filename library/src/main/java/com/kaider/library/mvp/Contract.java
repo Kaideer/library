@@ -129,11 +129,12 @@ public interface Contract {
          *
          * @param context:上下文
          * @param url:请求路径
+         * @param key:上传图片的key
          * @param file:File入参
          * @param bean:请求结果Bean类
          * @param callRequestData:返回结果接口
          */
-        void getRequestByPostFileAndHeader(Context context, String url, File file, B bean, CallRequestData callRequestData);
+        void getRequestByPostFileAndHeader(Context context, String url, String key, File file, B bean, CallRequestData callRequestData);
 
         /**
          * Put请求，Param入参，Header入参
@@ -164,10 +165,11 @@ public interface Contract {
          * @param url:请求路径
          * @param files:上传File，上传多张图片
          * @param paramMap:param入参
+         * @param key:上传图片的key
          * @param bean:请求结果Bean类
          * @param callRequestData:返回结果接口
          */
-        void getRequestByPostFilesAndParamAndHeader(Context context, String url, List<File> files, Map<String, String> paramMap, B bean, CallRequestData callRequestData);
+        void getRequestByPostFilesAndParamAndHeader(Context context, String url, String key, List<File> files, Map<String, String> paramMap, B bean, CallRequestData callRequestData);
 
         /**
          * Delete请求，param入参，header入参
@@ -187,10 +189,11 @@ public interface Contract {
          * @param url:请求路径
          * @param file:File入参，可上传图片
          * @param paramMap:param入参
+         * @param key:上传图片的key
          * @param bean:请求结果Bean类
          * @param callRequestData:返回结果接口
          */
-        void getRequestByPostFileParamAndHeader(Context context, String url, File file, Map<String, String> paramMap, B bean, CallRequestData callRequestData);
+        void getRequestByPostFileParamAndHeader(Context context, String url, String key, File file, Map<String, String> paramMap, B bean, CallRequestData callRequestData);
 
         /**
          * Post请求，不做任何入参
@@ -220,7 +223,7 @@ public interface Contract {
          * @param bean:请求结果Bean类
          * @param callRequestData:返回结果接口
          */
-        void getRequestByPutFieldAndHeader(Context context,String url, Map<String, String> fieldMap, B bean, CallRequestData callRequestData);
+        void getRequestByPutFieldAndHeader(Context context, String url, Map<String, String> fieldMap, B bean, CallRequestData callRequestData);
 
         /**
          * Delete请求，不做任何入参
@@ -351,7 +354,7 @@ public interface Contract {
          * @param file:File入参
          * @param bean:请求结果Bean类
          */
-        void mutualByPostFileAndHeader(Context context, String url, File file, O bean);
+        void mutualByPostFileAndHeader(Context context, String url,String key, File file, O bean);
 
         /**
          * Put请求，Param入参，Header入参
@@ -379,10 +382,11 @@ public interface Contract {
          * @param context:上下文
          * @param url:请求路径
          * @param files:上传File，上传多张图片
+         * @param key:上传多张图片的key
          * @param paramMap:param入参
          * @param bean:请求结果Bean类
          */
-        void mutualByPostFileAndParamAndHeader(Context context, String url, List<File> files, Map<String, String> paramMap, O bean);
+        void mutualByPostFileAndParamAndHeader(Context context, String url, String key, List<File> files, Map<String, String> paramMap, O bean);
 
         /**
          * Delete请求，param入参，header入参
@@ -400,10 +404,11 @@ public interface Contract {
          * @param context:上下文
          * @param url:请求路径
          * @param file:File入参，可上传图片
+         * @param key:上传图片的key
          * @param paramMap:param入参
          * @param bean:请求结果Bean类
          */
-        void mutualByPostFileParamAndHeader(Context context, String url, File file, Map<String, String> paramMap, O bean);
+        void mutualByPostFileParamAndHeader(Context context, String url, String key, File file, Map<String, String> paramMap, O bean);
 
         /**
          * Post请求，不做任何入参
@@ -426,11 +431,12 @@ public interface Contract {
         /**
          * Put请求，Field入参和Header入参
          *
+         * @param context:上下文
          * @param url:请求路径
          * @param fieldMap:field入参
          * @param bean:请求结果Bean类
          */
-        void mutualByPutFieldAndHeader(Context context,String url, Map<String, String> fieldMap,O bean);
+        void mutualByPutFieldAndHeader(Context context, String url, Map<String, String> fieldMap, O bean);
 
         /**
          * Delete请求，不做任何入参

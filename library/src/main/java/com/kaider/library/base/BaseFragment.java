@@ -409,13 +409,13 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
     /**
      * Post请求，File入参，Header入参
      */
-    public String requestByPostFileAndHeader(String url, File file, Object bean) {
+    public String requestByPostFileAndHeader(String url, String key, File file, Object bean) {
         //获取网络连接
         boolean networkConnected = NetConnections.isNetworkConnected(getActivity());
         if (networkConnected) {
             boolean isUserInfo = SpStorage.getUserInfo(getActivity());
             if (isUserInfo) {
-                presenter.mutualByPostFileAndHeader(getActivity(), url, file, bean);
+                presenter.mutualByPostFileAndHeader(getActivity(), url, key, file, bean);
                 return NORMAL;
             } else {
                 return NOLOGIN;
@@ -485,14 +485,14 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
     /**
      * Post请求，可上传多张图片
      */
-    public String requestByPostFilesAndParamAndHeader(String url, List<File> files, Map<String, String> paramMap, Object bean) {
+    public String requestByPostFilesAndParamAndHeader(String url, String key, List<File> files, Map<String, String> paramMap, Object bean) {
 
         //获取网络连接
         boolean networkConnected = NetConnections.isNetworkConnected(getActivity());
         if (networkConnected) {
             boolean isUserInfo = SpStorage.getUserInfo(getActivity());
             if (isUserInfo) {
-                presenter.mutualByPostFileAndParamAndHeader(getActivity(), url, files, paramMap, bean);
+                presenter.mutualByPostFileAndParamAndHeader(getActivity(), url, key, files, paramMap, bean);
                 return NORMAL;
             } else {
                 return NOLOGIN;
@@ -553,13 +553,13 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
     /**
      * Post请求
      */
-    public String requestByPostFileParamAndHeader(String url, File file, Map<String, String> paramMap, Object bean) {
+    public String requestByPostFileParamAndHeader(String url, String key, File file, Map<String, String> paramMap, Object bean) {
         //获取网络连接
         boolean networkConnected = NetConnections.isNetworkConnected(getActivity());
         if (networkConnected) {
             boolean isUserInfo = SpStorage.getUserInfo(getActivity());
             if (isUserInfo) {
-                presenter.mutualByPostFileParamAndHeader(getActivity(), url, file, paramMap, bean);
+                presenter.mutualByPostFileParamAndHeader(getActivity(), url, key, file, paramMap, bean);
                 return NORMAL;
             } else {
                 return NOLOGIN;

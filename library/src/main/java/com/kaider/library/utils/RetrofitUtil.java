@@ -123,9 +123,9 @@ public class RetrofitUtil<O> {
     }
 
     /**
-     * Post请求，用于发布圈子
+     * Post请求，可多图上传
      */
-    public void requestByPostFileAndParamAndHeader(String url, List<File> files, Map<String, String> paramMap, Map<String, String> headerMap, O bean, CallResultData callResultData) {
+    public void requestByPostFileAndParamAndHeader(String url,String key, List<File> files, Map<String, String> paramMap, Map<String, String> headerMap, O bean, CallResultData callResultData) {
 
         //判空处理
         if (files == null) {
@@ -143,7 +143,7 @@ public class RetrofitUtil<O> {
         int index = 0;
         for (File file : files) {
             RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-            MultipartBody.Part filePart = MultipartBody.Part.createFormData("picture", file.getName(), requestBody);
+            MultipartBody.Part filePart = MultipartBody.Part.createFormData(key, file.getName(), requestBody);
             parts[index] = filePart;
             index++;
         }
@@ -234,14 +234,14 @@ public class RetrofitUtil<O> {
     }
 
     /**
-     * Post请求，用于上传头像
+     * Post请求，可上传图片
      */
-    public void requestByPostUpHeadImg(String url, File file, Map<String, String> headerMap, O bean, CallResultData callResultData) {
+    public void requestByPostUpHeadImg(String url, String key,File file, Map<String, String> headerMap, O bean, CallResultData callResultData) {
         if (headerMap == null) {
             headerMap = new HashMap<>(3);
         }
         RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-        MultipartBody.Part filePart = MultipartBody.Part.createFormData("image", file.getName(), requestBody);
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData(key, file.getName(), requestBody);
 
         apiServer.requestByPostUpHeadImg(url, filePart, headerMap)
                 //指定请求线程
@@ -255,7 +255,7 @@ public class RetrofitUtil<O> {
     /**
      * Post请求，可上传图片Param入参和Header入参
      */
-    public void requestByPostUpFileParamAndHeader(String url, File file, Map<String, String> paramMap, Map<String, String> headerMap, O bean, CallResultData callResultData) {
+    public void requestByPostUpFileParamAndHeader(String url,String key, File file, Map<String, String> paramMap, Map<String, String> headerMap, O bean, CallResultData callResultData) {
         if (paramMap == null) {
             paramMap = new HashMap<>(16);
         }
@@ -263,7 +263,7 @@ public class RetrofitUtil<O> {
             headerMap = new HashMap<>(3);
         }
         RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), file);
-        MultipartBody.Part filePart = MultipartBody.Part.createFormData("content", file.getName(), requestBody);
+        MultipartBody.Part filePart = MultipartBody.Part.createFormData(key, file.getName(), requestBody);
 
         apiServer.requestByPostUpFileParamAndHeader(url, filePart, paramMap, headerMap)
                 //指定请求线程
