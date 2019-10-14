@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -55,7 +56,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
 
         setContentView(initLayout());
 
-        bindInstaceState(savedInstanceState);
+        getInstaceState(savedInstanceState);
 
         /**PackageManager packageManager = this.getApplication().getPackageManager();
          Intent intent = packageManager.getLaunchIntentForPackage(this.getPackageName());
@@ -113,7 +114,19 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
 
     }
 
-    protected abstract void bindInstaceState(Bundle savedInstanceState);
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        saveInstanceState(outState);
+    }
+
+    public void saveInstanceState(Bundle outState) {
+
+    }
+
+    public void getInstaceState(Bundle savedInstanceState) {
+
+    }
 
     public boolean isRegisterEventBus() {
         return false;

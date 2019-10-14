@@ -50,7 +50,7 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(initLayout(), null);
 
-        bindInstaceState(savedInstanceState);
+        getInstaceState(savedInstanceState);
 
         //透明状态栏
         getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
@@ -90,7 +90,19 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
         return view;
     }
 
-    protected abstract void bindInstaceState(Bundle savedInstanceState);
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        saveInstanceState(outState);
+    }
+
+    public void saveInstanceState(Bundle outState) {
+
+    }
+
+    public void getInstaceState(Bundle savedInstanceState) {
+
+    }
 
     /**
      * 用于决定是否开启EventBus
