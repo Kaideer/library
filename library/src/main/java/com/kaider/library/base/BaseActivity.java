@@ -55,6 +55,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
 
         setContentView(initLayout());
 
+        bindInstaceState(savedInstanceState);
+
         /**PackageManager packageManager = this.getApplication().getPackageManager();
          Intent intent = packageManager.getLaunchIntentForPackage(this.getPackageName());
          ComponentName launchComponentName = intent.getComponent();
@@ -111,6 +113,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
 
     }
 
+    protected abstract void bindInstaceState(Bundle savedInstanceState);
+
     public boolean isRegisterEventBus() {
         return false;
     }
@@ -158,8 +162,13 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
     public static Activity getCurrencyActivityInstence(Activity activity) {
         if (activity != null) {
             for (int i = 0; i < activities.size(); i++) {
+                //判断activity 的集合是否存有当前activity的实例
                 if (activities.get(i) == activity) {
+                    //有则返回
                     return activities.get(i);
+                } else {
+                    //没有则返回null
+                    return null;
                 }
             }
         }
