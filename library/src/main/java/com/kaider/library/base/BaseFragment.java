@@ -61,6 +61,7 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
 //        StatusBarUtil.setStatusBarColor(getActivity(), R.color.black);
         StatusBarUtil.setStatusBarDarkTheme(getActivity(), true);
 
+        //初始化控件,此方法禁止请求数据或者对数据进行操作，请求数据的操作请在 preparingData()方法内操作
         initView(view);
 
         context = getActivity();
@@ -71,6 +72,7 @@ public abstract class BaseFragment extends Fragment implements Contract.IView {
         if (isRegisterEventBus()) {
             EventBus.getDefault().register(this);
         }
+
 //
 //        //初始化加载框
 //        //初始化AlertDialog

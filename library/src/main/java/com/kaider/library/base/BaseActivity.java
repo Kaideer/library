@@ -85,7 +85,7 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
 //        StatusBarUtil.setStatusBarColor(this, R.color.black);
         StatusBarUtil.setStatusBarDarkTheme(this, true);
 
-        //初始化控件
+        //初始化控件,此方法禁止请求数据或者对数据进行操作，请求数据的操作请在 preparingData()方法内操作
         initView();
 
         //判断是否注册EventBus
