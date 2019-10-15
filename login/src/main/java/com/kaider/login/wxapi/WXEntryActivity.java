@@ -22,6 +22,7 @@ public class WXEntryActivity extends BaseWxLoginActivity {
         // 隐藏状态栏
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         return 0;
     }
 

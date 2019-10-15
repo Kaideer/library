@@ -54,7 +54,11 @@ public abstract class BaseActivity extends AppCompatActivity implements Contract
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(initLayout());
+        try {
+            setContentView(initLayout());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         getInstaceState(savedInstanceState);
 
