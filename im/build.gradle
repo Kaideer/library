@@ -39,12 +39,12 @@ dependencies {
 ////PushSDK
 //    api 'com.umeng.umsdk:push:6.0.1'
 
-    //极光IM
-    implementation 'cn.jiguang.sdk:jmessage:2.9.0'  // 此处以JMessage 2.9.0 版本为例。
-    implementation 'cn.jiguang.sdk:jcore:2.0.0'  // 此处以JCore 2.0.0 版本为例。
-
-    //极光统计
-    implementation 'cn.jiguang.sdk:janalytics:2.1.0' // 此处以JAnalytics 2.1.0 版本为例。
-    implementation 'cn.jiguang.sdk:jcore:1.2.6' // 此处以JCore 1.2.6 版本为例。
+//    //极光IM
+//    implementation 'cn.jiguang.sdk:jmessage:2.9.0'  // 此处以JMessage 2.9.0 版本为例。
+//    implementation 'cn.jiguang.sdk:jcore:2.0.0'  // 此处以JCore 2.0.0 版本为例。
+//
+//    //极光统计
+//    implementation 'cn.jiguang.sdk:janalytics:2.1.0' // 此处以JAnalytics 2.1.0 版本为例。
+//    implementation 'cn.jiguang.sdk:jcore:1.2.6' // 此处以JCore 1.2.6 版本为例。
 
 }
