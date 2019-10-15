@@ -9,7 +9,7 @@ package com.kaider.library.api;
 public class MyApi {
 
     /**
-     * BaseUrl,外网环境
+     * BaseUrl,网络环境
      */
     public static String Base_Url = "";
 
