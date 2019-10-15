@@ -16,13 +16,15 @@ public class SpStorage {
     /**
      * 存String值
      **/
-    public static void setStringValue(Context context, String tableName, String key, String value) {
+    public static boolean setStringValue(Context context, String tableName, String key, String value) {
         if (context != null) {
             SharedPreferences sharedPreferences = context.getSharedPreferences(tableName, Context.MODE_PRIVATE);
             SharedPreferences.Editor edit = sharedPreferences.edit();
             edit.putString(key, value);
-            edit.apply();
+            boolean commit = edit.commit();
+            return commit;
         }
+        return false;
     }
 
     /**

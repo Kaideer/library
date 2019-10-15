@@ -20,4 +20,19 @@ public class MyApiLogin {
      */
     public static String WXSecret = "";
 
+    /**
+     * 通过 code 获取 access_token
+     */
+    public static String Access_Token = "sns/oauth2/access_token";
+
+    /**
+     * 获取refresh_token
+     */
+    public static String Refresh_Token = "sns/oauth2/refresh_token";
+
+    /**
+     * 获取用户信息的BaseUrl
+     */
+    public static String WxLoginGetAccessTokenBaseUrl = "https://api.weixin.qq.com/";
+
 }
