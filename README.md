@@ -1,6 +1,8 @@
 # library
 实用的library框架
 
+--里面的微信登录纯属自己瞎捣鼓的，忽略--
+
 这是一个简单实用的网络框架，里面封装了MVP使用Retrofit+RxJava+OkHttp请求网络，使用者只需要在Activity或者Fragment里面继承
 BaseActivity或者BaseFragment通过requestBy...等一句话就可以在responseSuccess方法里面接收请求到的网络数据，通过 instanceof 关键字
 来判断返回的数据是哪一个Bean类，因为当数据请求到之后会自动将数据解析成Bean类，以Object类型传到responseSuccess方法中的
